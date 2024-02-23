@@ -1,15 +1,24 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { UsuarioComponent } from './usuario/usuario.component';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, UsuarioComponent],
+  imports: [RouterOutlet, UsuarioComponent, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+  isAuthenticated :boolean = false;
   city:string = "Azuqueca de Henares, España";
+
+  login() {
+    this.isAuthenticated = true;
+  }
+  logout() {
+    this.isAuthenticated = false;
+  }
 }

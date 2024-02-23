@@ -335,4 +335,14 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
 
+<p class="component">bienvenido a {{city}}</p>
 <router-outlet />
+<app-usuario></app-usuario>
+<div>
+  <h1>aplicacion de ejemplo</h1>
+  <button (click)="login()" *ngIf="!isAuthenticated">Iniciar sesion</button>
+  <button (click)="logout()" *ngIf="isAuthenticated">cerrar sesion "></button>
+  <div *ngIf="isAuthenticated">
+    <p>Has iniciado sesion</p>
+  </div>
+</div>
